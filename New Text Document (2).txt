@@ -1,0 +1,56 @@
+void Post_Link_Web_https://raovat49.com(IWebDriver browser, string tua_de, string content, string sdt, string img1,string img2, string img3,string img4,string img5)
+        {
+            while (true)
+            {
+                try
+                {
+                    browser.FindElement(By.CssSelector("a.btn.btn-block.btn-border.btn-post.btn-danger")).Click();
+                    break;
+                }
+                catch
+                {
+
+                }
+            }
+            while (true)
+            {
+                try
+                {
+                    browser.FindElement(By.Name("Name")).SendKeys(tua_de);
+                    break;
+                }
+                catch
+                {
+
+                }
+            }
+
+            foreach (var iteam in browser.FindElement(By.Id("CategoryId")).FindElements(By.TagName("option")))
+            {
+                if (iteam.Text.Contains("Mua bán nhà đất"))
+                {
+                    iteam.Click();
+                    break;
+                }
+            }
+            browser.FindElement(By.CssSelector("div.ql-editor.ql-blank")).SendKeys(content);
+            browser.FindElement(By.Id("CustomerPhone")).Clear();
+            browser.FindElement(By.Id("CustomerPhone")).SendKeys(sdt);
+            foreach (var x in browser.FindElement(By.Id("ProvinceId")).FindElements(By.TagName("option")))
+            {
+                if (x.Text.Contains("Hà Nội"))
+                {
+                    x.Click();
+                    break;
+                }
+            }
+            browser.FindElement(By.ClassName("imgUpload")).SendKeys(img1);
+            browser.FindElement(By.Id("PhotoFile2")).SendKeys(img2);
+            browser.FindElement(By.Id("PhotoFile3")).SendKeys(img3);
+            browser.FindElement(By.Id("PhotoFile4")).SendKeys(img4);
+            browser.FindElement(By.Id("PhotoFile5")).SendKeys(img5);
+            browser.FindElement(By.CssSelector("input.btn.btn-success.btn-lg")).Click();
+
+
+        }
+https://preview.themeforest.net/item/essentials-high-converting-saas-landing-page-template/full_screen_preview/23220583?_ga=2.17563518.6339100.1616577533-1928314564.1613811518
